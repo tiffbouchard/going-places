@@ -1,17 +1,26 @@
+import { LngLatLike } from 'mapbox-gl';
 import React, { useRef, useEffect, useState } from 'react';
 
-export default function Sidebar() {
+interface SidebarProps {
+    fly: (coordinates: LngLatLike) => void;
+    data: any;
+}
+
+export default function Sidebar({fly, data}: SidebarProps) {
     return (
-        <aside className='sidebar p-5 w-1/5 bg-offwhite rounded-tl-xl rounded-bl-xl border-r'>
+        <aside className='sidebar p-5 w-1/5 bg-offwhite dark:bg-black-90 dark:text-white rounded-tl-xl rounded-bl-xl border-r dark:border-slate-800 backdrop-blur-sm'>
             <div className='buttons flex pb-9 gap-2'>
                 <div className='bg-red'></div>
                 <div className='bg-yellow'></div>
                 <div className='bg-green'></div>
             </div>
-            <span className='font-bold text-sm'>Fly To</span>
-            <div className='flex flex-col pt-1 gap-1'>
-                <button className='flex align-start ml-3'>Greece</button>
-                <button className='flex align-start ml-3'>California</button>
+            <span className='font-bold text-sm'>Places</span>
+            <div className='flex flex-col pt-2'>
+                {data.features.map((marker: any) => (
+                    <button className='flex align-start ml-3 dark:hover:bg-transgray py-1 px-4 rounded-lg' onClick={() => {fly(marker.geometry.coordinates)}}>
+                        {marker.type}
+                    </button>
+                ))}
             </div>
         </aside>
     );
