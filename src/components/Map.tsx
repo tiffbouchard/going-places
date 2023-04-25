@@ -1,9 +1,6 @@
-import React, { useRef, useEffect, useState, Fragment } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl, { LngLatLike } from 'mapbox-gl';
 import Sidebar from './Sidebar';
-import Nav from './Nav';
-import IMG_1 from '../public/IMG_1302.JPG';
-import IMG_2 from '../public/IMG_9028.JPG';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoidGlmZmJvdWNoYXJkIiwiYSI6ImNsZ3U3Zjh1NTAwN2czcnRuaXhlbDB2dWMifQ.EGbYZc90g-91we5t1FUShQ';
 
@@ -34,7 +31,7 @@ export default function Map() {
                 },
                 'images': [
                     {
-                        'url': `${process.env.NEXT_PUBLIC_PUBLIC_URL}${IMG_1.src}`,
+                        'url': `${process.env.NEXT_PUBLIC_PUBLIC_URL}/IMG_1302.JPG`,
                     }
                 ]
             },
@@ -50,7 +47,7 @@ export default function Map() {
                 },
                 'images': [
                     {
-                        'url': `${process.env.NEXT_PUBLIC_PUBLIC_URL}${IMG_2.src}`,
+                        'url': `${process.env.NEXT_PUBLIC_PUBLIC_URL}/IMG_9028.JPG`,
                     }
                 ]
             }

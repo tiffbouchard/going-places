@@ -16,8 +16,8 @@ export default function Sidebar({fly, data}: SidebarProps) {
             </div>
             <span className='font-bold text-sm'>Places</span>
             <div className='flex flex-col pt-2'>
-                {data.features.map((marker: any) => (
-                    <button className='flex align-start ml-3 dark:hover:bg-transgray py-1 px-4 rounded-lg' onClick={() => {fly(marker.geometry.coordinates)}}>
+                {data.features.map((marker: any, index: number) => (
+                    <button key={index} className='flex align-start ml-3 dark:hover:bg-transgray py-1 px-4 rounded-lg' onClick={() => {fly(marker.geometry.coordinates)}}>
                         {marker.type}
                     </button>
                 ))}
