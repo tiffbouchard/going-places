@@ -8,9 +8,10 @@ function classNames(...classes: string[]) {
 interface DropdownProps {
   name: string;
   style?: string;
+  links?: string[];
 }
 
-export default function Dropdown({name, style}: DropdownProps) {
+export default function Dropdown({name, style, links}: DropdownProps) {
 
   return (
     <Menu as="div" className="relative inline-block text-left">
@@ -29,62 +30,24 @@ export default function Dropdown({name, style}: DropdownProps) {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute left-0 z-30 mt-2 w-56 origin-top-left divide-y divide-gray-100 rounded-md bg-white shadow-lg focus:outline-none">
-          <div className="py-1">
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="#"
-                  className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  Edit
-                </a>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="#"
-                  className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  Duplicate
-                </a>
-              )}
-            </Menu.Item>
-          </div>
-          <div className="py-1">
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="#"
-                  className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  Archive
-                </a>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="#"
-                  className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  Move
-                </a>
-              )}
-            </Menu.Item>
+        <Menu.Items className="dark:bg-black-70 backdrop-blur-lg absolute left-0 z-30 mt-2 w-56 origin-top-left divide-y divide-gray-100 rounded-md border border-grayborder bg-white shadow-md focus:outline-none">
+
+          <div className="p-1">
+            { links?.map((link, index) => (
+              <Menu.Item key={index}>
+                {({ active }) => (
+                  <a
+                    href="#"
+                    className={classNames(
+                      active ? 'text-sm bg-gray-100 rounded-lg text-gray-900 dark:text-white dark:bg-blue-100 py-1 px-3' : 'py-1 px-3 text-gray-700 dark:text-white',
+                      'block text-sm'
+                    )}
+                  >
+                    {link}
+                  </a>
+                )}
+              </Menu.Item>
+              ))}
           </div>
         </Menu.Items>
       </Transition>

@@ -41,10 +41,6 @@ body {
   width: 15px;
 }
 
-.mapboxgl-ctrl-bottom-right {
-  bottom: 40px !important;
-}
-
 .main {
   width: 80vw;
 }

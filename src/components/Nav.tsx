@@ -7,12 +7,12 @@ export default function Nav() {
     const [currentDateTime, setCurrentDateTime] = useState('');
     const [open, setOpen] = useState(false);
     const buttons = [
-        { name: '🥑', className: ''},
-        { name: 'Going Places', className: 'font-bold'},
-        { name: 'File', className: 'z-50'},
-        { name: 'Edit', className: 'z-50'},
+        { name: '🥑', className: '', links: ['About This Person', 'System Preferences']},
+        { name: 'Going Places', className: 'font-bold', links: ['About This Website']},
+        { name: 'File', className: 'z-50', links: ['Share']},
+        { name: 'Edit', className: 'z-50', links: ['Font']},
         { name: 'Image', className: 'z-50'},    
-        { name: 'View', className: 'z-50'},
+        { name: 'View', className: 'z-50', links: ['Map', 'Satellite', 'Fun']},
         { name: 'Window', className: 'z-50'},
         { name: 'Help', className: 'z-50'}
     ];
@@ -35,7 +35,7 @@ export default function Nav() {
     return (
         <nav className='bg-black dark:bg-black text-slate-900 dark:text-white relative flex items-center justify-between h-10 px-4 backdrop-blur-lg z-10 grow-0'>
             <div className='flex gap-4'>
-                { buttons.map((button, index) => ( <Dropdown key={index} name={button.name} style={button.className} /> )) }
+                { buttons.map((button, index) => ( <Dropdown key={index} name={button.name} style={button.className} links={button.links}/> )) }
             </div>
             <div className='flex gap-4'>
                 <button>🔋</button>

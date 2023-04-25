@@ -14,9 +14,14 @@ module.exports = {
         red: 'rgb(254, 86, 80)',
         yellow: 'rgb(254, 181, 60)',
         green: 'rgb(98, 199, 85)',
+        grayapple: 'rgb(49, 51, 51)',
+        grayborder: 'rgb(75, 78, 79)',
         black: {
           90: 'rgba(0, 0, 0, 0.9)',
           70: 'rgba(0, 0, 0, 0.7)',
+        },
+        blue: {
+          100: 'rgba(52, 106, 189)',
         }
 
       },

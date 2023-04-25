@@ -8,7 +8,7 @@ interface SidebarProps {
 
 export default function Sidebar({fly, data}: SidebarProps) {
     return (
-        <aside className='sidebar p-5 w-1/5 bg-offwhite dark:bg-black-90 dark:text-white rounded-tl-xl rounded-bl-xl border-r dark:border-slate-800 backdrop-blur-sm'>
+        <aside className='sidebar p-5 w-1/5 bg-offwhite dark:bg-black-70 dark:text-white rounded-tl-xl rounded-bl-xl border-r dark:border-slate-800 backdrop-blur-md'>
             <div className='buttons flex pb-9 gap-2'>
                 <div className='bg-red'></div>
                 <div className='bg-yellow'></div>
