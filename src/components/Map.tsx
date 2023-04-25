@@ -7,6 +7,8 @@ interface MapProps {
     locations: Location[];
 }
 
+// Some of my favourite places and moments
+
 mapboxgl.accessToken = 'pk.eyJ1IjoidGlmZmJvdWNoYXJkIiwiYSI6ImNsZ3U3Zjh1NTAwN2czcnRuaXhlbDB2dWMifQ.EGbYZc90g-91we5t1FUShQ';
 
 export default function Map({ locations }: MapProps) {
@@ -34,14 +36,14 @@ export default function Map({ locations }: MapProps) {
         locations.forEach((marker: Location) => {
             const el = document.createElement('div');
             el.className = 'marker';
-            el.innerHTML = `<span>${marker.images.length.toString()}</span>`;
-            el.style.backgroundImage = `url(${marker.images[0].asset.url})`;
+            el.innerHTML = `<span>${marker.images?.length.toString()}</span>`;
+            el.style.backgroundImage = marker.images?.length ? `url(${marker.images[0].asset.url})` : '';
             el.style.backgroundSize = 'cover';
             el.style.width = '80px';
             el.style.height = '80px';
 
             new mapboxgl.Marker(el)
-                .setLngLat([marker.coordinates.lat, marker.coordinates.lng])
+                .setLngLat([marker.coordinates?.lat ? marker.coordinates.lat : 0, marker.coordinates?.lng ? marker.coordinates.lng : 0])
                 .addTo(map.current!);
         });
     }, []);
