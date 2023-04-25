@@ -49,4 +49,23 @@ body {
   padding: 5px;
   border-radius: 5px;
   border: 5px solid white;
+  position: relative;
+}
+
+.marker:hover {
+  cursor: pointer;
+}
+
+.marker span {
+  @apply bg-blue-200 text-white;
+  position: absolute;
+  top: -13px;
+  right: -5px;
+  padding: 2px;
+  border-radius: 15px;
+  min-width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
 }

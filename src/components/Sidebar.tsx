@@ -14,11 +14,11 @@ export default function Sidebar({fly, data}: SidebarProps) {
                 <div className='bg-yellow'></div>
                 <div className='bg-green'></div>
             </div>
-            <span className='font-bold text-sm'>Places</span>
+            <span className='font-bold text-sm'>Fly to</span>
             <div className='flex flex-col pt-2'>
-                {data.features.map((marker: any, index: number) => (
-                    <button key={index} className='flex align-start ml-3 dark:hover:bg-transgray py-1 px-4 rounded-lg' onClick={() => {fly(marker.geometry.coordinates)}}>
-                        {marker.type}
+                {data.map((marker: any, index: number) => (
+                    <button key={index} className='flex align-start ml-3 dark:hover:bg-transgray py-1 px-4 rounded-lg' onClick={() => {fly([marker.coordinates.lat, marker.coordinates.lng])}}>
+                        {marker.name}
                     </button>
                 ))}
             </div>
