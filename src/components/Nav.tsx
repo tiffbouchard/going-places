@@ -19,7 +19,14 @@ export default function Nav() {
 
     useEffect(() => {
         const date = new Date();
-        const options = { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true };
+        const options: Intl.DateTimeFormatOptions = {
+            weekday: 'short',
+            month: 'short',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: true
+          };
         const dateTimeString = date.toLocaleString('en-US', options);
         setCurrentDateTime(dateTimeString);
     }, []);
@@ -28,7 +35,7 @@ export default function Nav() {
     return (
         <nav className='bg-black dark:bg-black text-slate-900 dark:text-white relative flex items-center justify-between h-10 px-4 backdrop-blur-lg z-10 grow-0'>
             <div className='flex gap-4'>
-                { buttons.map((button) => ( <Dropdown name={button.name} style={button.className} /> )) }
+                { buttons.map((button, index) => ( <Dropdown key={index} name={button.name} style={button.className} /> )) }
             </div>
             <div className='flex gap-4'>
                 <button>🔋</button>

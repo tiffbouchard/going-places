@@ -1,11 +1,16 @@
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Dropdown({name, style}) {
+interface DropdownProps {
+  name: string;
+  style?: string;
+}
+
+export default function Dropdown({name, style}: DropdownProps) {
 
   return (
     <Menu as="div" className="relative inline-block text-left">
