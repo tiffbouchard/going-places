@@ -22,7 +22,7 @@ export default function Map({ locations }: MapProps) {
     ]);
 
     useEffect(() => {
-        if (!mapContainer.current || map.current) return; // initialize map only once
+        if (!mapContainer.current || map.current) return;
         map.current = new mapboxgl.Map({
             container: mapContainer.current,
             style: 'mapbox://styles/mapbox/streets-v12',
@@ -31,7 +31,6 @@ export default function Map({ locations }: MapProps) {
             zoom: zoom
         });
         map.current?.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
-        console.log(locations)
         locations.forEach((marker: Location) => {
             const el = document.createElement('div');
             el.className = 'marker';
