@@ -31,7 +31,7 @@ export default function Dropdown({name, style, links}: DropdownProps) {
         leaveTo="transform opacity-0 scale-95"
       >
         <div className="relative">
-          <Menu.Items className="text-black dark:bg-black-60 bg-[#e5e7ebe6] absolute left-0 z-30 mt-2 w-56 origin-top-left rounded-md shadow-md focus:outline-none">
+          <Menu.Items className="text-black dark:bg-black-70 dark:border-[#6b728080] bg-[#e5e7ebe6] absolute left-0 z-30 mt-2 w-56 origin-top-left rounded-md shadow-md focus:outline-none">
             {/* <div className="backdrop-blur-[30px] absolute inset-0 rounded-md"></div> */}
             <div className="p-1 relative z-10">
               { links?.map((link, index) => (
@@ -39,7 +39,7 @@ export default function Dropdown({name, style, links}: DropdownProps) {
                   {({ active }) => (
                     <a
                       href="#"
-                      className="text-sm text-black-100 w-full block rounded-lg hover:bg-blue-100 hover:text-white py-1 px-3"
+                      className="text-sm text-black-100 dark:text-white w-full block rounded-lg hover:bg-blue-100 hover:text-white py-1 px-3"
                     >
                       {link}
                     </a>
