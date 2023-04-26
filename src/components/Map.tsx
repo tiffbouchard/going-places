@@ -34,6 +34,11 @@ interface MapProps {
 // 3d models of ideas
 // 3d models of concepts
 
+
+// add a paint brush to the map
+// add a paint window with an intro
+// add loading animation
+
 mapboxgl.accessToken = 'pk.eyJ1IjoidGlmZmJvdWNoYXJkIiwiYSI6ImNsZ3U3Zjh1NTAwN2czcnRuaXhlbDB2dWMifQ.EGbYZc90g-91we5t1FUShQ';
 
 export default function Map({ locations }: MapProps) {
