@@ -32,7 +32,7 @@ body {
 
 body {
   overflow: hidden;
-  background-image: url('../public/background.png');
+  background-image: url('../public/background3.png');
 }
 
 .buttons div {
@@ -41,9 +41,9 @@ body {
   width: 15px;
 }
 
-.main {
-  width: 80vw;
-}
+/* .main {
+  width: 90%;
+} */
 
 .marker {
   padding: 5px;

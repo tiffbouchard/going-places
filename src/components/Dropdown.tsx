@@ -30,26 +30,25 @@ export default function Dropdown({name, style, links}: DropdownProps) {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="dark:bg-black-70 backdrop-blur-lg absolute left-0 z-30 mt-2 w-56 origin-top-left divide-y divide-gray-100 rounded-md border border-grayborder bg-white shadow-md focus:outline-none">
-
-          <div className="p-1">
-            { links?.map((link, index) => (
-              <Menu.Item key={index}>
-                {({ active }) => (
-                  <a
-                    href="#"
-                    className={classNames(
-                      active ? 'text-sm bg-gray-100 rounded-lg text-gray-900 dark:text-white dark:bg-blue-100 py-1 px-3' : 'py-1 px-3 text-gray-700 dark:text-white',
-                      'block text-sm'
-                    )}
-                  >
-                    {link}
-                  </a>
-                )}
-              </Menu.Item>
+        <div className="relative">
+          <Menu.Items className="text-black dark:bg-black-60 bg-[#e5e7ebe6] absolute left-0 z-30 mt-2 w-56 origin-top-left rounded-md shadow-md focus:outline-none">
+            {/* <div className="backdrop-blur-[30px] absolute inset-0 rounded-md"></div> */}
+            <div className="p-1 relative z-10">
+              { links?.map((link, index) => (
+                <Menu.Item key={index}>
+                  {({ active }) => (
+                    <a
+                      href="#"
+                      className="text-sm text-black-100 w-full block rounded-lg hover:bg-blue-100 hover:text-white py-1 px-3"
+                    >
+                      {link}
+                    </a>
+                  )}
+                </Menu.Item>
               ))}
-          </div>
-        </Menu.Items>
+            </div>
+          </Menu.Items>
+        </div>
       </Transition>
     </Menu>
   )

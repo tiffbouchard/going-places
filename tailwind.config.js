@@ -17,13 +17,16 @@ module.exports = {
         grayapple: 'rgb(49, 51, 51)',
         grayborder: 'rgb(75, 78, 79)',
         black: {
+          100: 'rgba(0, 0, 0, 1)',
           90: 'rgba(0, 0, 0, 0.9)',
           70: 'rgba(0, 0, 0, 0.7)',
+          60: 'rgba(0, 0, 0, 0.3)',
         },
         blue: {
           100: 'rgba(52, 106, 189)',
           200: 'rgba(52, 120, 246)',
-        }
+        },
+        system: 'rgb(242, 242, 247, 0.3)',
 
       },
       backgroundImage: {

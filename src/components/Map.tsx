@@ -2,12 +2,37 @@ import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl, { LngLatLike } from 'mapbox-gl';
 import Sidebar from './Sidebar';
 import { Location } from '@app/pages';
+import Draggable from 'react-draggable';
 
 interface MapProps {
     locations: Location[];
 }
 
-// Some of my favourite places and moments
+// unique ideas for my website
+// maybe have weird stuff pop up every so often
+// maybe have a button that shows a random location
+// have a spotify player that plays my favourite songs
+// have cool weird widgets in the control panel
+//  micro interactions on the map
+// micro interactions on the sidebar
+// micro interactions on the nav
+// micro animations on the map
+// micro animations on the sidebar
+// Some of my favourite memories places and moments
+
+
+
+// experiencing real life on the web
+// 3d models of places
+// 3d models of people
+// 3d models of things
+// 3d models of memories
+// 3d models of experiences
+// 3d models of feelings
+// 3d models of emotions
+// 3d models of thoughts
+// 3d models of ideas
+// 3d models of concepts
 
 mapboxgl.accessToken = 'pk.eyJ1IjoidGlmZmJvdWNoYXJkIiwiYSI6ImNsZ3U3Zjh1NTAwN2czcnRuaXhlbDB2dWMifQ.EGbYZc90g-91we5t1FUShQ';
 
@@ -82,10 +107,16 @@ export default function Map({ locations }: MapProps) {
     }
 
     return (
-        <div className='flex flex-row grow'>
+        <Draggable
+            handle=".handle"
+            defaultPosition={{x: 100, y: 50}}
+            onMouseDown={(e) => {console.log('clicked')}}
+
+        >
+        <div className='flex flex-row h-[80%] w-[80%]'>
             <Sidebar fly={flyTo} data={locations}/>
-            <div className='flex flex-column z-0 w-4/5'>
-                <nav className='dark:bg-black-90 dark:text-white secondary bg-offwhite text-slate-900 flex items-center justify-center h-14 drop-shadow-md rounded-tr-xl backdrop-blur-sm absolute z-10 main'>
+            <div className='flex flex-column z-0 w-full' ref={mapContainer}>
+                <nav className='handle w-[inherit] dark:bg-black-90 dark:text-white bg-offwhite text-slate-900 flex items-center justify-center h-14 drop-shadow-md rounded-tr-xl backdrop-blur-sm absolute z-10'>
                     <div className='flex justify-around rounded-lg dark:border-slate-800 border w-2/6 hover:bg-transgray hover:ease-in duration-200'>
                         {buttons.map((button, id) => (
                             <button
@@ -98,8 +129,9 @@ export default function Map({ locations }: MapProps) {
                         ))}
                     </div>
                 </nav>
-                <div ref={mapContainer} className="main rounded-tr-xl rounded-br-lg" />
+                {/* <div className="w-[inherit] rounded-tr-xl rounded-br-lg" /> */}
             </div>
         </div>
+        </Draggable>
     );
 }

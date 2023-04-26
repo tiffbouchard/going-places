@@ -4,6 +4,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import Map from '@app/components/Map';
 import Nav from '@app/components/Nav';
 import { createClient } from "next-sanity";
+import Dialog from '@app/components/Dialog';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,6 +28,7 @@ interface HomeProps {
 export default function Home({ locations }: HomeProps) {
   return (
     <div className='flex flex-col h-screen'>
+        <Dialog/>
         <Nav />
         <Map locations={locations} />
     </div>
